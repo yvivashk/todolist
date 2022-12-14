@@ -43,13 +43,26 @@ $task_list = [
         'category' => 'Домашние дела',
         'status' => true,
     ],
+    [
+        'task' => 'Купить автомобиль Toyota RAV4',
+        'date_completion' => '15.09.2023',
+        'category' => 'Авто',
+        'status' => false,
+    ],
 ];
 
-// Функция подсчета задач
-function counter_project($list, $name) {
+/**
+ * Функция подсчёта задач в каждом из проектов
+ * @param $list // в этот параметр передаём двумерный массив $task_list
+ * @param $name // в этот параметр передаём элемент из массива $my_work
+ * @return int // возвращаем количество задач
+ */
+function counter_task($list, $name) {
     $count = 0;
-    if ($list === $name) {
-        $count = $count + 1;
+    foreach ($list as $key => $value) {
+        if ($value['category'] === $name) {
+            $count += 1;
+        }
     }
     return $count;
 }
@@ -98,7 +111,7 @@ function counter_project($list, $name) {
                         <?php foreach ($my_work as $work): ?>
                             <li class="main-navigation__list-item">
                                 <a class="main-navigation__list-item-link" href="#"><?=$work; ?></a>
-                                <span class="main-navigation__list-item-count"><?=counter_project($work, "Учёба"); ?></span>
+                                <span class="main-navigation__list-item-count"><?=counter_task($task_list, $work); ?></span>
                             </li>
                         <?php endforeach; ?>
                     </ul>
