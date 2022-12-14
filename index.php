@@ -44,7 +44,17 @@ $task_list = [
         'status' => true,
     ],
 ];
+
+// Функция подсчета задач
+function counter_project($list, $name) {
+    $count = 0;
+    if ($list === $name) {
+        $count = $count + 1;
+    }
+    return $count;
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -71,7 +81,7 @@ $task_list = [
 
                 <div class="main-header__side-item user-menu">
                     <div class="user-menu__data">
-                        <p>Константин</p>
+                        <p>Юрий</p>
 
                         <a href="#">Выйти</a>
                     </div>
@@ -88,7 +98,7 @@ $task_list = [
                         <?php foreach ($my_work as $work): ?>
                             <li class="main-navigation__list-item">
                                 <a class="main-navigation__list-item-link" href="#"><?=$work; ?></a>
-                                <span class="main-navigation__list-item-count">0</span>
+                                <span class="main-navigation__list-item-count"><?=counter_project($work, "Учёба"); ?></span>
                             </li>
                         <?php endforeach; ?>
                     </ul>
