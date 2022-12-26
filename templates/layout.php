@@ -1,77 +1,3 @@
-<?php
-
-// тег title
-$title = "Дела в порядке";
-
-// показывать или нет выполненные задачи
-$show_complete_tasks = rand(0, 1);
-
-// Массив проектов
-$my_work = ["Входящие", "Учёба", "Работа", "Домашние дела", "Авто", ];
-
-// Массив задач
-$task_list = [
-    [
-        'task' => 'Собеседование в IT компании',
-        'date_completion' => '01.12.2019',
-        'category' => 'Работа',
-        'status' => false,
-    ],
-    [
-        'task' => 'Выполнить тестовое задание',
-        'date_completion' => '25.12.2019',
-        'category' => 'Работа',
-        'status' => false,
-    ],
-    [
-        'task' => 'Сделать задание первого раздела',
-        'date_completion' => '21.12.2019',
-        'category' => 'Учёба',
-        'status' => true,
-    ],
-    [
-        'task' => 'Встреча с другом',
-        'date_completion' => '22.12.2019',
-        'category' => 'Входящие',
-        'status' => false,
-    ],
-    [
-        'task' => 'Купить корм для кота',
-        'date_completion' => null,
-        'category' => 'Домашние дела',
-        'status' => true,
-    ],
-    [
-        'task' => 'Заказать пиццу',
-        'date_completion' => null,
-        'category' => 'Домашние дела',
-        'status' => true,
-    ],
-    [
-        'task' => 'Купить автомобиль Toyota RAV4',
-        'date_completion' => '15.09.2023',
-        'category' => 'Авто',
-        'status' => false,
-    ],
-];
-
-/**
- * Функция подсчёта задач в каждом из проектов
- * @param $list // в этот параметр передаём двумерный массив $task_list
- * @param $name // в этот параметр передаём элемент из массива $my_work
- * @return int // возвращаем количество задач
- */
-function counter_task($list, $name) {
-    $count = 0;
-    foreach ($list as $key => $value) {
-        if ($value['category'] === $name) {
-            $count += 1;
-        }
-    }
-    return $count;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -85,8 +11,7 @@ function counter_task($list, $name) {
 
 <body>
 <h1 class="visually-hidden">Дела в порядке</h1>
-
-<?php $main_content = include_template('main.php');?>
+<div class="content"><?= $content; ?></div>
 
 <div class="page-wrapper">
     <div class="container container--with-sidebar">
