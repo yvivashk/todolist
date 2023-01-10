@@ -5,7 +5,7 @@
         <ul class="main-navigation__list">
             <?php foreach ($my_work as $work): ?>
                 <li class="main-navigation__list-item">
-                    <a class="main-navigation__list-item-link" href="#"><?= $work; ?></a>
+                    <a class="main-navigation__list-item-link" href="#"><?= strip_tags($work); ?></a>
                     <span class="main-navigation__list-item-count"><?= counter_task($task_list, $work); ?></span>
                 </li>
             <?php endforeach; ?>
@@ -51,10 +51,10 @@
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
                         <input class="checkbox__input visually-hidden" type="checkbox" checked>
-                        <span class="checkbox__text"><?= $value['task']; ?></span>
+                        <span class="checkbox__text"><?= strip_tags($value['task']); ?></span>
                     </label>
                 </td>
-                <td class="task__date"><?= $value['date_completion'] ?></td>
+                <td class="task__date"><?= strip_tags($value['date_completion']); ?></td>
 
                 <td class="task__controls">
                 </td>
