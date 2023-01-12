@@ -16,4 +16,12 @@ function counter_task($list, $name) {
     return $count;
 }
 
+/**
+ * Функция подсчета оставшегося времени
+ * @param $data_completion // в этот параметр передаём дату завершения задачи
+ */
+function remaining_time_counter($data_completion) {
+    $current_time = time();
+}
+
 ?>
