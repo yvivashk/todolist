@@ -12,7 +12,7 @@ $my_work = ["Входящие", "Учёба", "Работа", "Домашние 
 $task_list = [
     [
         'task' => 'Собеседование в IT компании',
-        'date_completion' => '01.12.2019',
+        'date_completion' => '14.01.2023',
         'category' => 'Работа',
         'status' => false,
     ],

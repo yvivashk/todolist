@@ -20,8 +20,12 @@ function counter_task($list, $name) {
  * Функция подсчета оставшегося времени
  * @param $data_completion // в этот параметр передаём дату завершения задачи
  */
-function remaining_time_counter($data_completion) {
-    $current_time = time();
+function get_time_left($data) {
+    $current_time = time(); // текущее время
+    $completion_time = strtotime($data); // время завершения задачи
+    $result = ($completion_time - $current_time) / 3600; // количество оставшихся часов до окончания задачи
+    floor($result);
+    return $result;
 }
 
 ?>

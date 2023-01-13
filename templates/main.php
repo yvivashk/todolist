@@ -47,10 +47,9 @@
             <?php if ($value['status'] && $show_complete_tasks == 0) {
                 continue;
             } ?>
-            <tr class="tasks__item task <?php if ($value['status']): ?> task--completed<?php endif; ?>">
+            <tr class="tasks__item task <?php if ($value['status']): ?> task--completed<?php endif; ?><?php if (get_time_left($value['date_completion']) <= 24): ?>task--important<?php endif; ?>">
                 <td class="task__select">
                     <label class="checkbox task__checkbox">
-                        <input class="checkbox__input visually-hidden" type="checkbox" checked>
                         <span class="checkbox__text"><?= strip_tags($value['task']); ?></span>
                     </label>
                 </td>
